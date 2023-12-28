@@ -9,8 +9,8 @@ const newYear = document.querySelector('#new-year');
 const now = new Date();
 newYear.innerHTML = now.getFullYear() + 1;
 // const countToDate = new Date(now.getFullYear() + 1, 0, 1).getTime();
-// const countToDate = new Date("Jan 1, 2024 0:0:0").getTime();
-const countToDate = new Date("Dec 29, 2023 0:9:0").getTime();
+const countToDate = new Date("Jan 1, 2024 0:0:0").getTime();
+// const countToDate = new Date("Dec 29, 2023 0:9:0").getTime();
 
 
 
@@ -41,7 +41,7 @@ var S = {
       if (i !== -1) {
         S.UI.simulate(decodeURI(action).substring(i + 3));
       } else {
-        S.UI.simulate('|#countdown 3|新年快樂!|檬貓|霜霜|達達|幻影||2023|美好回憶|總結過去:|笑過|哭過|累過|盼過|辭舊迎新|願2024的你|歡歡喜喜|甜甜蜜蜜||祝你們|龍舞金堆|財運亨通|龍游大海|富貴自來|飛龍在天|財富騰飛|我想說的是|在新的一年|為自己|寫下新的|美好故事|再次祝你們|新年快樂|有緣|再見|#rectangle 100x100|');
+        S.UI.simulate('|#countdown 3|新年快樂!|檬貓|霜霜|達達|幻影||2023|美好回憶|總結過去:|笑過|哭過|累過|盼過|辭舊迎新|願2024的你|歡歡喜喜|甜甜蜜蜜||祝你們|龍舞金堆|財運亨通|龍游大海|富貴自來|飛龍在天|財富騰飛|我想說的是|在新的一年|為自己|寫下新的|美好故事|再次祝你們|新年快樂|有緣|再見|#icon heart|');
       }
   
       S.Drawing.loop(function () {
