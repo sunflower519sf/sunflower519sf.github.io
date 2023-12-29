@@ -98,3 +98,16 @@ body {
         font-size: 40%;
     }
 }
+
+
+#audioButton {
+    top: 20px;
+    left: 20px;
+    width: 10px; 
+    height: 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: absolute;
+    z-index: 999;
+}

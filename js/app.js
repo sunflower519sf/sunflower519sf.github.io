@@ -5,12 +5,41 @@ const minutesSpan = document.querySelector('#minutes');
 const secondsSpan = document.querySelector('#seconds');
 const newYear = document.querySelector('#new-year');
 
+const audioButton = document.getElementById('audioButton');
+const audioImage = document.getElementById('audioImage');
+const audio = document.getElementById('myAudio');
+
+let isPlaying = true;
+let lastTime = 0;
+audioImage.src = 'assets/stop.png';
+
+document.addEventListener('DOMContentLoaded', function() {
+  
+
+
+  audioButton.addEventListener('click', function() {
+    if (!isPlaying) {
+      audio.play(); 
+      audioImage.src = 'assets/stop.png';
+      audio.currentTime = lastTime;
+      isPlaying = true;
+    } else {
+      audio.pause(); 
+      lastTime = audio.currentTime;
+      audioImage.src = 'assets/play.png'; 
+      isPlaying = false;
+    }
+  });
+});
+
+
+
 
 const now = new Date();
 newYear.innerHTML = now.getFullYear() + 1;
 // const countToDate = new Date(now.getFullYear() + 1, 0, 1).getTime();
-const countToDate = new Date("Jan 1, 2024 0:0:0").getTime();
-// const countToDate = new Date("Dec 29, 2023 0:9:0").getTime();
+// const countToDate = new Date("Jan 1, 2024 0:0:0").getTime();
+const countToDate = new Date("Dec 29, 2023 18:15:0").getTime();
 
 
 
@@ -41,7 +70,8 @@ var S = {
       if (i !== -1) {
         S.UI.simulate(decodeURI(action).substring(i + 3));
       } else {
-        S.UI.simulate('|#countdown 3|新年快樂!|檬貓|霜霜|達達|幻影||2023|美好回憶|總結過去|笑過|哭過|累過|盼過|辭舊迎新|願2024的你|歡歡喜喜|甜甜蜜蜜||祝你們|龍舞金堆|財運亨通|龍游大海|富貴自來|飛龍在天|財富騰飛|我想說的是|在新的一年|為自己|寫下新的|美好故事|再次祝你們|新年快樂|有緣|再見|||希望|明年會有|不一樣的驚喜|');
+        S.UI.simulate('|#countdown 3|新年快樂!|檬貓|霜霜|達達|幻影||2023|美好回憶|總結過去|笑過|哭過|累過|盼過|辭舊迎新|願2024的你|歡歡喜喜|甜甜蜜蜜|||我想說的是|在新的一年|為自己|寫下新的|美好 故事|再次祝你們|新年快樂|有 緣|再 見|||希望大家|所有心願|都可以實現|||||||||||||||哇你竟然看到這|真愛了|謝謝awa|');
+        
       }
   
       S.Drawing.loop(function () {
@@ -494,7 +524,7 @@ var S = {
   
   
   S.ShapeBuilder = (function () {
-    var gap = 13,
+    var gap = 10,
         shapeCanvas = document.createElement('canvas'),
         shapeContext = shapeCanvas.getContext('2d'),
         fontSize = 500,
@@ -753,10 +783,12 @@ const countdownInterval = setInterval( () => {
         document.querySelector(".content-wrapper").style.display = "none";
         happyNewYear();
         
-        document.getElementById('backgroundMusic').src = "https://www.youtube.com/embed/lqqiy8H3SdE?si=F6GUEabjGpM4ZAJq&amp;controls=0&autoplay=1"
-        
+        // document.getElementById('backgroundMusic').src = "https://www.youtube.com/embed/lqqiy8H3SdE?si=F6GUEabjGpM4ZAJq&amp;controls=0&autoplay=1"
+        document.getElementById('myAudio').src = "./audio/audio2.mp3"
         
     } else {
+        
+
         daysSpan.innerHTML = days;
         hoursSpan.innerHTML = hours;
         minutesSpan.innerHTML = minutes;
@@ -782,17 +814,5 @@ const fireworks = new Fireworks(fireworkContainer, {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  const bgMusic = document.getElementById('backgroundMusic');
-  const playPauseButton = document.getElementById('playPauseButton');
 
-  playPauseButton.addEventListener('click', function() {
-    if (bgMusic.paused) {
-      bgMusic.play();
-      playPauseButton.textContent = '暫停';
-    } else {
-      bgMusic.pause();
-      playPauseButton.textContent = '播放';
-    }
-  });
-});
+
