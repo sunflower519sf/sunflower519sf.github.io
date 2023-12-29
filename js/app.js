@@ -9,9 +9,9 @@ const audioButton = document.getElementById('audioButton');
 const audioImage = document.getElementById('audioImage');
 const audio = document.getElementById('myAudio');
 
-let isPlaying = true;
+let isPlaying = false;
 let lastTime = 0;
-audioImage.src = 'assets/stop.png';
+
 
 document.addEventListener('DOMContentLoaded', function() {
   
@@ -39,7 +39,7 @@ const now = new Date();
 newYear.innerHTML = now.getFullYear() + 1;
 // const countToDate = new Date(now.getFullYear() + 1, 0, 1).getTime();
 const countToDate = new Date("Jan 1, 2024 0:0:0").getTime();
-// const countToDate = new Date("Dec 29, 2023 18:15:0").getTime();
+// const countToDate = new Date("Dec 29, 2023 20:11:0").getTime();
 
 
 
@@ -788,11 +788,14 @@ const countdownInterval = setInterval( () => {
         
     } else {
         
-
+      
         daysSpan.innerHTML = days;
         hoursSpan.innerHTML = hours;
         minutesSpan.innerHTML = minutes;
         secondsSpan.innerHTML = seconds;
+
+        
+
     }
     
     
@@ -813,6 +816,9 @@ const fireworks = new Fireworks(fireworkContainer, {
 });
 
 
-
+audio.play(); 
+audioImage.src = 'assets/stop.png';
+audio.currentTime = lastTime;
+isPlaying = true;
 
 
