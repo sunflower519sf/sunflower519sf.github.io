@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
 const now = new Date();
 newYear.innerHTML = now.getFullYear() + 1;
 // const countToDate = new Date(now.getFullYear() + 1, 0, 1).getTime();
-// const countToDate = new Date("Jan 1, 2024 0:0:0").getTime();
-const countToDate = new Date("Dec 29, 2023 18:15:0").getTime();
+const countToDate = new Date("Jan 1, 2024 0:0:0").getTime();
+// const countToDate = new Date("Dec 29, 2023 18:15:0").getTime();
 
 
 
