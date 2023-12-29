@@ -34,11 +34,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
 const now = new Date();
 newYear.innerHTML = now.getFullYear() + 1;
 // const countToDate = new Date(now.getFullYear() + 1, 0, 1).getTime();
 const countToDate = new Date("Jan 1, 2024 0:0:0").getTime();
 // const countToDate = new Date("Dec 29, 2023 18:15:0").getTime();
+
 
 
 function happyNewYear() {
@@ -782,7 +784,7 @@ const countdownInterval = setInterval( () => {
         happyNewYear();
         
         // document.getElementById('backgroundMusic').src = "https://www.youtube.com/embed/lqqiy8H3SdE?si=F6GUEabjGpM4ZAJq&amp;controls=0&autoplay=1"
-        document.getElementById('myAudio').src = "./audio/audio2.mp3"
+        document.getElementById('myAudio').src = "https://github.com/sunflower519sf/sunflower519sf.github.io/blob/main/audio/audio2.MP3?raw=true"
         
     } else {
         
