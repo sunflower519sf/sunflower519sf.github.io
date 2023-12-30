@@ -39,7 +39,7 @@ const now = new Date();
 newYear.innerHTML = now.getFullYear() + 1;
 // const countToDate = new Date(now.getFullYear() + 1, 0, 1).getTime();
 const countToDate = new Date("Jan 1, 2024 0:0:0").getTime();
-// const countToDate = new Date("Dec 29, 2023 20:11:0").getTime();
+// const countToDate = new Date("Dec 30, 2023 15:25:0").getTime();
 
 
 
@@ -70,7 +70,7 @@ var S = {
       if (i !== -1) {
         S.UI.simulate(decodeURI(action).substring(i + 3));
       } else {
-        S.UI.simulate('|#countdown 3|新年快樂!|檬貓|霜霜|達達|幻影||2023|美好回憶|總結過去|笑過|哭過|累過|盼過|辭舊迎新|願2024的你|歡歡喜喜|甜甜蜜蜜|||我想說的是|在新的一年|為自己|寫下新的|美好 故事|再次祝你們|新年快樂|有 緣|再 見|||希望大家|所有心願|都可以實現|||||||||||||||哇你竟然看到這|真愛了|謝謝awa|');
+        S.UI.simulate('|#countdown 3|新年快樂!|檬貓|霜霜|達達|幻影||2023|美好回憶|總結過去|笑過|哭過|累過|盼過|辭舊迎新|願2024的你|歡歡喜喜|甜甜蜜蜜|||我想說的是|在新的一年|為自己|寫下新的|美好 故事|再次祝你們|新年快樂|有 緣|再 見|||希望大家|所有心願|都可以實現|||||||||||||||竟然看到這|真愛了|謝謝awa|||檬貓|知無不言|出類拔萃||霜霜|愛惜身體|美夢成真||達達|盡快出獄(誤|佳偶天成||幻影|逍遙自在|學業有成|');
         
       }
   
@@ -776,7 +776,7 @@ const countdownInterval = setInterval( () => {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-    if (distance < 5000) {
+    if (distance < 6000) {
         clearInterval(countdownInterval);
         daysSpan.innerHTML = hoursSpan.innerHTML = minutesSpan.innerHTM = secondsSpan.innerHTML = 0;
         fireworks.start();
