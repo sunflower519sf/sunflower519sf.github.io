@@ -52,7 +52,7 @@
     left: 35%;
     transform: translate(-50%, -50%);
     font-family: 'Arial', sans-serif;
-    font-size: 5rem;
+    font-size: 3rem;
     color: #fff;
     text-align: center;
     word-wrap: break-word;
@@ -61,7 +61,7 @@
 
 .ask {
     font-family: 'Arial', sans-serif;
-    font-size: 5rem;
+    font-size: 3rem;
     color: #fff;
     text-align: center;
     word-wrap: break-word;
@@ -73,13 +73,13 @@
 }
 
 .answer {
-    width: 40vw;
-    height: 30vw;
+    width: 30vw;
+    height: 20vw;
     border-radius: 3rem;
     background: rgba(255, 0, 0, 0.5);
     margin: 1rem;
     font-family: 'Arial', sans-serif;
-    font-size: 5em;
+    font-size: 3em;
     color: #fff;
     text-align: center;
     word-wrap: break-word;
@@ -106,7 +106,7 @@
 }
 
 #countdown {
-    font-size: 2rem;
+    font-size: 1rem;
     color: #faaaaa;
     position: absolute;
     left: 50%;
