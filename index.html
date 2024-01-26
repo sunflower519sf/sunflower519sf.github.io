@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新春活動</title>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" 
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://cdn.staticfile.org/Chart.js/3.9.1/chart.js"></script>
+
+
+</head>
+<body class="startBackGround">
+
+    <div>
+        <h1 class="eve-after ask text-shadow eve-end start-lunarNY">建議使用橫向播放<br>以獲得更好的體驗</h1>
+        
+    </div>
+
+    <div class="nonePage eve-before eve-end start-NY">
+        <span id="countdown" class="text-shadow">計算剩餘時間...</span>
+    </div>
+
+    <div class="nonePage eve-before start-NY">
+        <h1 class="title text-shadow" style="top: 250px;">點擊右方按鈕<br>開始除夕節目</h1>
+        <button id="startButton" class="blockButton" style="top: 250px;">
+            <img id="startImage" src="./img/start_button.png" alt="Play" width="auto" height="200" >
+        </button>
+    </div>
+    
+    <div>
+        <h1 class="nonePage eve-after ask text-shadow start-NY" style="margin-top: 15px;">等待除夕節目開始...</h1>
+    </div>
+
+    <div class="nonePage start-eve start-NY">
+        <div class="evemv-ground" id="evemv-Ground">
+            <div class="evemv-headline"><h2 id="evemv-Headline">是否要顯示畫面?<br>*不顯示可在後台播放</h2></div>
+            
+            <div class="evemv-button">
+                <button class="evemv-picture-no" onclick="eveVideoNo()" id="eveVideoNo">不顯示<br>畫面</button>
+                <button class="evemv-picture-yes" onclick="eveVideoYes()" id="eveVideoNo">顯示<br>畫面</button>
+            </div>
+		</div>
+    </div>
+
+    <div class="nonePage eve-end start-NY">
+        <h1 class="ask text-shadow" style="margin-top: 50px;">請等待新年節目開始</h1>
+    </div>
+
+    
+    <div class="nonePage start-lunarNY">
+        <h1 class="title text-shadow" style="top: 250px;">點擊右方按鈕<br>開始新年節目</h1>
+        <button id="startButton-NY" class="blockButton" style="top: 250px;">
+            <img id="startImage" src="./img/start_button.png" alt="Play" width="auto" height="200" >
+        </button>
+    </div>
+
+    <div class="nonePage">
+        <div class="evemv-ground" id="evemv-Ground">
+            <div class="evemv-headline"><h2 id="evemv-Headline">是否要顯示畫面?</h2></div>
+            
+            <div class="evemv-button">
+                <button class="evemv-picture-no" onclick="eveVideoNo()" id="eveVideoNo">不顯示<br>畫面</button>
+                <button class="evemv-picture-yes" onclick="eveVideoYes()" id="eveVideoNo">顯示<br>畫面</button>
+            </div>
+		</div>
+    </div>
+
+
+    <!-- 測試開始 -->
+
+    
+    <div id="player"></div>
+    <script src="http://www.youtube.com/player_api"></script>
+
+    <script>
+
+        // create youtube player
+        var player;
+        function onYouTubePlayerAPIReady() {
+            player = new YT.Player('player', {
+              width: '640',
+              height: '390',
+              videoId: '0Bmhjf0rKe8',
+              events: {
+                onReady: onPlayerReady,
+                onStateChange: onPlayerStateChange
+              }
+            });
+        }
+
+        // autoplay video
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+
+        // when video ends
+        function onPlayerStateChange(event) {        
+            if(event.data === 0) {          
+                alert('done');
+            }
+        }
+
+    </script>
+
+
+
+    <!-- 測試結束 -->
+
+    <audio id="eve-audio" src="https://github.com/sunflower519sf/lunarNY2024/blob/main/audio/eve-start.MP3?raw=true" type="audio/mpeg">你的瀏覽器不支援音樂</audio>
+    <iframe class="nonePage eve-video" src="https://www.youtube.com/embed/KbBOATiwank?si=PmT2zknHj6PmApeQ&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    
+    <div id="NY-video" class="nonePage NY-video"></div>
+    <iframe class="nonePage NY-video" src="https://www.youtube.com/embed/WfP-E_7Uoco?si=H2GcvxakLbpZTYrP&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+    <script src="./js/index.js"></script>
+</body>
+</html>
