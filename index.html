@@ -74,45 +74,7 @@
     </div>
 
 
-    <!-- 測試開始 -->
-
     
-    <div id="player"></div>
-    <script src="http://www.youtube.com/player_api"></script>
-
-    <script>
-
-        // create youtube player
-        var player;
-        function onYouTubePlayerAPIReady() {
-            player = new YT.Player('player', {
-              width: '640',
-              height: '390',
-              videoId: '0Bmhjf0rKe8',
-              events: {
-                onReady: onPlayerReady,
-                onStateChange: onPlayerStateChange
-              }
-            });
-        }
-
-        // autoplay video
-        function onPlayerReady(event) {
-            event.target.playVideo();
-        }
-
-        // when video ends
-        function onPlayerStateChange(event) {        
-            if(event.data === 0) {          
-                alert('done');
-            }
-        }
-
-    </script>
-
-
-
-    <!-- 測試結束 -->
 
     <audio id="eve-audio" src="https://github.com/sunflower519sf/lunarNY2024/blob/main/audio/eve-start.MP3?raw=true" type="audio/mpeg">你的瀏覽器不支援音樂</audio>
     <iframe class="nonePage eve-video" src="https://www.youtube.com/embed/KbBOATiwank?si=PmT2zknHj6PmApeQ&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
