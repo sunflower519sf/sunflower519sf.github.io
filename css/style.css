@@ -10,23 +10,31 @@
     } 
 }
 
+body {
+    overflow: hidden;
+    scrollbar-width: none;
+}
 
 .backGround {
+    margin: 0;
+    padding: 0;
     height: 100vh;
+    width: 100vw;
     background-position: bottom left;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(../img/background.png);
-    overflow-y: hidden;
+    background-image: url(../img/background.jpg);
 }
 
 .startBackGround {
+    margin: 0;
+    padding: 0;
     height: 100vh;
+    width: 100vw;
     background-position: bottom left;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(../img/start-background.png);
-    overflow-y: hidden;
+    background-image: url(../img/start-background.jpg);
 }
 
 .centered-content {
@@ -50,7 +58,7 @@
     position: absolute;
     top:50%;
     left: 25%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -15%);
     font-family: 'Arial', sans-serif;
     font-size: 5vw;
     color: #fff;
@@ -59,7 +67,7 @@
 
 }
 
-.ask {
+.ask, .ask-check-jump {
     font-family: 'Arial', sans-serif;
     font-size: 5vw;
     color: #fff;
@@ -72,7 +80,7 @@
     margin: 0;
 }
 
-.answer {
+.answer, .answer-check-jump {
     width: 30vw;
     height: 20vw;
     border-radius: 3rem;
@@ -123,7 +131,7 @@
     border-radius: 20px;
     width: 180px;
     height: 150px;
-    font-size: 4vw;
+    font-size: 3vw;
     writing-mode: horizontal-tb;
 }
 
@@ -142,12 +150,11 @@
 }
 
 .eve-video, .NY-video {
-    width: 80vw;
-    height: 45vw;
+    width: 64vw;
+    height: 36vw;
     position: absolute;
-    left: 11vw;
+    left: 17vw;
 }
-
 
 
 
