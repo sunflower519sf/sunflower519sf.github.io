@@ -2,6 +2,8 @@ const fireworkContainer = document.querySelector('.backGround');
 const audioButton = document.getElementById('startButton');
 const asks = document.querySelectorAll(".answer");
 
+var askAudio1 = document.getElementById('ask-audio1')
+
 let askCount = 0;
 let errorCheck = false
 
@@ -190,7 +192,13 @@ document.getElementById('startButton').addEventListener('click', function() {
     document.querySelector(".pageStart").style.display = "none";
     document.querySelector(".pageAsk").style.display = "block";
 
-    
+    askAudio1.src = "https://github.com/sunflower519sf/lunarNY2024/blob/main/audio/ask-audio1.MP3?raw=true"
+    askAudio1.play();
+    askAudio1.addEventListener('ended', function() {
+        console.log("123")
+    });
+
+
     fetch('setting.json')
     .then(response => response.json())
     .then(data => {
@@ -228,7 +236,7 @@ asks.forEach(button => {
 document.getElementById('check-jump').addEventListener('click', function() {
     document.querySelectorAll('.check-jump').forEach(element => {element.style.display = 'none';});
     document.querySelectorAll('.pageStart').forEach(element => {element.style.display = 'none';});
-    endChart()
+    endChart();
 
 });
 

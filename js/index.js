@@ -1,8 +1,8 @@
 const countdownElement = document.getElementById('countdown');
 
 
-// const countToDate = new Date("Feb 10, 2024 0:0:0").getTime();
-const countToDate = new Date("Dec 31, 2023 14:8:0").getTime();
+const countToDate = new Date("Feb 10, 2024 0:0:0").getTime();
+// const countToDate = new Date("Dec 31, 2023 14:8:0").getTime();
 var eveAudio = document.getElementById('eve-audio');
 var NYAudio = document.getElementById('NY-audio');
 var NYAudio2 = document.getElementById('NY-audio2');
