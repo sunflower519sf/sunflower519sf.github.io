@@ -10,6 +10,33 @@
     } 
 }
 
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+
+@keyframes scroll-up {
+    0%   { -webkit-transform: translate(0, 30%); }
+	100% { -webkit-transform: translate(0, -130%); }
+}
+
+@keyframes textAnimation {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
 body {
     overflow: hidden;
     scrollbar-width: none;
@@ -36,6 +63,18 @@ body {
     background-repeat: no-repeat;
     background-image: url(../img/start-background.jpg);
 }
+
+/* .blessBackGround {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-position: bottom left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../img/bless-background.jpg);
+} */
+
 
 .centered-content {
     flex-direction: column;
@@ -156,7 +195,61 @@ body {
     left: 17vw;
 }
 
+.word, .word-text {
+    margin: auto;
+    position: absolute;
+    top: 7vh;
+    left: 5vw;
+    color: white;
+    font: 700 normal 7vh 'tahoma';
+    white-space: pre-wrap;
+    background-image: linear-gradient(
+        -225deg,
+        #570777 0%,
+        #5824dd 15%,
+        #13c0ff 30%,
+        #72cc0c 50%,
+        #f5ba0b 80%
+    );
+    background-clip: border-box;
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
 
+.end-img {
+    width: auto;
+    height: 90vh;
+    position: absolute;
+    top: 50%;
+    right: 3vw;
+    transform: translate(0%, -50%);
+    z-index: -1;
+}
+
+
+.scroll-up-text span {
+    display: inline-block;
+    text-indent: 0;
+    animation: scroll-up 100s linear;
+}
+
+
+.now-bless {
+    margin: 0px;
+}
+
+.bless-text {
+    position: absolute;
+    width: 100%;
+    display: inline-block;
+    font-family: "Raleway", sans-serif;
+    font-size: 15vh;
+    text-align: center;
+    user-select: none;
+    color: white;
+}
 
 #startButton, #startButton-NY {
     position: fixed;
@@ -176,5 +269,26 @@ body {
     font-weight: bold;
 }
 
+#playButton, #go-to-end {
+    position: fixed;
+    top: 3px;
+    left: 3px;
+    z-index: 99;
+    padding: 0.1vh 0.1vw;
+    background-color: rgba(255, 255, 255, 0);;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 2.5vw;
+}
 
-
+#bless-container {
+    position: absolute;
+    margin: auto;
+    width: 100vw;
+    height: 80pt;
+    top: 0;
+    bottom: 0;
+    filter: url(#threshold) blur(0.6px);
+}

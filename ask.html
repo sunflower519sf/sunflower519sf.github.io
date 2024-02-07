@@ -5,30 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>新春猜謎</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <script src="https://cdn.staticfile.org/Chart.js/3.9.1/chart.js"></script>
-
+    
     <script src="https://www.youtube.com/player_api"></script>
 </head>
 <body class="backGround">
     
 
-    <div class="pageStart centered-content">
+    <div class="now-ask pageStart centered-content">
         <button id="startButton" class="blockButton">
             <img id="startImage" src="./img/start_button.png" alt="Play" width="auto" height="200">
         </button>
         <h1 class="title text-shadow">歡慶新春 龍年猜謎<br>點擊右方按鈕開始</h1>
     </div>
 
-    <div class="pageAsk nonePage">
+    <div class="now-ask pageAsk nonePage">
         <div class="centered-content">
             <h1 class="ask text-shadow">問題</h1>
             <div class="container">
@@ -39,28 +39,54 @@
         </div>
     </div>
     
-
-    <div class="nonePage check-jump">
+    <!-- <div class="nonePage check-jump">
         <h1 class="ask-check-jump text-shadow">點擊下方按鈕進入結算頁面</h1>
         <button class="answer-check-jump text-shadow" id="check-jump" style="width: 50vw;height: 30vw;position: relative;left:25%;">點擊後前往<br>結算頁面</button>
-    </div>
+    </div> -->
 
-
-    <div class="pageEnd nonePage">
+    <div class="now-ask pageEnd nonePage">
         <canvas id="myChart" width="400" height="200"></canvas>
     </div>
     
-    <div class="nonePage endNoError">
+    <div class="now-ask nonePage endNoError">
         <h1 class="ask text-shadow" style="margin-top: 30px;">恭喜你 全部答對</h1>
         <h2 class="ask text-shadow" style="margin-top: 30px;">請等待頁面自動跳轉...</h2>
     </div>
 
 
+    <div class="now-bless nonePage">
+        <div id="bless-container">
+            <span class="bless-text" id="bless-text1"></span>
+            <span class="bless-text" id="bless-text2"></span>
+        </div>
+        <svg id="filters">
+            <defs>
+                <filter id="threshold">
+                    <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                                            0 1 0 0 0
+                                            0 0 1 0 0
+                                            0 0 0 255 -140" />
+                </filter>
+            </defs>
+        </svg>
+        <script src="scripts.js"></script>
+    </div>
+   
+    
+
+
+        
+    <div class="wait-music nonePage">
+        <button id="go-to-end" style="top:50%;left:15%;transform: translate(50%, -50%);font: 700 normal 4.5vw 'tahoma';text-align: center;">等待音樂結束<br>或點擊該文字<br>前往結束感謝頁面</button>
+    </div>
+
     
     <!-- <div class="backGround" style="background-image: url(./img/background.png);"></div> -->
-    
     <audio id="ask-audio1" src="https://404">你的瀏覽器不支援音樂</audio>
-    <audio id="ask-music" src="https://github.com/sunflower519sf/lunarNY2024/blob/main/audio/ask-music.MP3?raw=true">你的瀏覽器不支援音樂</audio>
+    <audio id="ask-audio2" src="https://404">你的瀏覽器不支援音樂</audio>
+    <audio id="ask-music" src="https://404">你的瀏覽器不支援音樂</audio>
+
+
 
     <script src="./js/fireworks.js"></script>
     <script src="./js/scripts.js"></script>

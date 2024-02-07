@@ -20,11 +20,11 @@ function NYVideoEnd(event) {
     if(event.data === 0) {          
         document.querySelectorAll('.NY-video').forEach(element => {element.style.display = 'none';});
         document.querySelectorAll('.NY-ask').forEach(element => {element.style.display = 'block';});
-        NYAudio2.src = "https://github.com/sunflower519sf/lunarNY2024/blob/main/audio/audio2.MP3?raw=true"
-        NYAudio2.play()
+        NYAudio2.src = "https://github.com/sunflower519sf/lunarNY2024/blob/main/audio/audio2.MP3?raw=true";
+        NYAudio2.play();
         NYAudio2.addEventListener('ended', function() {
             document.querySelectorAll('.NY-ask').forEach(element => {element.style.display = 'none';});
-            window.location = "ask.html"
+            window.location = "ask.html";
         });
     }
 }
